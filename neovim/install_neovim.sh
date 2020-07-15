@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_CONFIG_DIR="$HOME/.local/share/nvim"
+_CONFIG_DIR="$HOME/.config/nvim"
 
 sudo apt install neovim -y
 
