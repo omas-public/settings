@@ -2,7 +2,7 @@
 
 _CONFIG_DIR="$HOME/.local/share/nvim"
 
-sudo apt install nvim -y
+sudo apt install neovim -y
 
 if [ ! -d $_CONFIG_DIR ]; then
     mkdir -p $_CONFIG_DIR
