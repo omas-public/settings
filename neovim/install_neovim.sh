@@ -14,4 +14,4 @@ cp ./conf/{init.vim,local_bundles.vim,local_init.vim} $_CONFIG_DIR
 
 sudo apt install python3-pip
 pip3 install flake8 autopep8 black isort
-echo 'export PATH=$PATH:$HOME/.local/bin' >> .bash_aliases
+echo 'export PATH=$PATH:$HOME/.local/bin' >> $HOME/.bash_aliases
