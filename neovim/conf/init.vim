@@ -3,7 +3,7 @@
 "*****************************************************************************
 "" Vim-PLug core
 "*****************************************************************************
-let vimplug_exists=expand('~/.local/nvim/site/autoload/plug.vim')
+let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
 
 let g:vim_bootstrap_langs = "html,javascript,python"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
@@ -15,14 +15,14 @@ if !filereadable(vimplug_exists)
   endif
   echo "Installing Vim-Plug..."
   echo ""
-  silent exec "!\curl -fLo " . vimplug_exists . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  silent exec "!\curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
   let g:not_finish_vimplug = "yes"
 
   autocmd VimEnter * PlugInstall
 endif
 
 " Required:
-call plug#begin(expand('~/.config/nvim/plugged'))
+call plug#begin(expand('~/.local/share/nvim/site/plugged'))
 
 "*****************************************************************************
 "" Plug install packages
