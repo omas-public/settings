@@ -1,6 +1,6 @@
 #!/bin/bash
 
-_CONFIG_DIR="$HOME/.local/share/nvim"
+_CONFIG_DIR="$HOME/.local/share/nvim/site/autoload"
 
 sudo apt install curl -y
-cp -r ./conf/autoload $_CONFIG_DIR
+cp  ./conf/autoload/plug.vim $_CONFIG_DIR
