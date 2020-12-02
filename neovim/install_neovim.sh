@@ -1,6 +1,8 @@
 #!/bin/bash
 
 _CONFIG_DIR="$HOME/.config/nvim"
+_PLUGIN_DIR="$HOME/.local/share/nvim/site/autoload"
+
 
 sudo apt install neovim -y
 
@@ -8,10 +10,14 @@ if [ ! -d $_CONFIG_DIR ]; then
     mkdir -p $_CONFIG_DIR
 fi
 
-cp ./conf/{init.vim,local_bundles.vim,local_init.vim} $_CONFIG_DIR
+sudo apt install curl
 
-### python3 linter
+curl -fLo "$_PLUGIN_DIR/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo apt install python3-pip
-pip3 install flake8 autopep8 black isort
-echo 'export PATH=$PATH:$HOME/.local/bin' >> $HOME/.bash_aliases
+echo '1) node 2) python3'
+read input
+case "$input" in
+    '1') exec node.conf.sh;;
+    '2') exec python3.conf.sh;;
+esac
