@@ -2,7 +2,7 @@
 
 _CONFIG_DIR="$HOME/.config/nvim"
 
-cp ./conf/python/{init.vim,local_bundles.vim,local_init.vim} $_CONFIG_DIR
+cp ./conf/python3/{init.vim,local_bundles.vim,local_init.vim} $_CONFIG_DIR
 
 ### python3 linter
 
