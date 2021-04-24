@@ -1,9 +1,9 @@
 #!/bin/bash
 
 _CONFIG_DIR="$HOME/.config/nvim"
-_PLUGIN_DIR="$HOME/.local/share/nvim/site/autoload"
+_PLUGIN_DIR="$_CONFIG_DIR/autoload"
 
-
+sudo apt update
 sudo apt install neovim -y
 
 if [ ! -d $_CONFIG_DIR ]; then
