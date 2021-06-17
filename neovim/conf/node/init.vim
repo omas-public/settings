@@ -1,4 +1,4 @@
-" vim-bootstrap 2020-12-02 00:56:07
+" vim-bootstrap 2021-06-17 06:45:17
 
 "*****************************************************************************
 "" Vim-Plug core
@@ -10,8 +10,8 @@ else
   let curl_exists=expand('curl')
 endif
 
-let g:vim_bootstrap_langs = "html,javascript,typescript"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
+let g:vim_bootstrap_langs = "html,javascript"
+let g:vim_bootstrap_editor = "neovim"				" nvim or vim
 let g:vim_bootstrap_theme = "molokai"
 let g:vim_bootstrap_frams = ""
 
@@ -89,11 +89,6 @@ Plug 'mattn/emmet-vim'
 Plug 'jelera/vim-javascript-syntax'
 
 
-" typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-
-
 "*****************************************************************************
 "*****************************************************************************
 
@@ -115,7 +110,7 @@ filetype plugin indent on
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
-
+set ttyfast
 
 "" Fix backspace indent
 set backspace=indent,eol,start
@@ -183,15 +178,26 @@ else
   let g:indentLine_faster = 1
 
   
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+  else
+    if $TERM == 'xterm'
+      set term=xterm-256color
+    endif
+  endif
+  
 endif
 
+
+if &term =~ '256color'
+  set t_ut=
+endif
 
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
 
-au TermEnter * setlocal scrolloff=0
-au TermLeave * setlocal scrolloff=3
+set scrolloff=3
 
 
 "" Status bar
@@ -318,7 +324,7 @@ noremap <Leader>v :<C-u>vsplit<CR>
 
 "" Git
 noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gc :Git commit --verbose<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
@@ -450,10 +456,6 @@ augroup vimrc-javascript
   autocmd!
   autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
 augroup END
-
-
-" typescript
-let g:yats_host_keyword = 1
 
 
 
