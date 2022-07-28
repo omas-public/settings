@@ -1,7 +1,7 @@
 Install & Settings & Configiration
 ========
 
-Install
+Install(Update)
 -------
 
 - [Ubuntu](https://www.ubuntulinux.jp/)
