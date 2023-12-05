@@ -2,8 +2,8 @@ set mouse-=a "no mouse
 set clipboard+=unnamedplus
 let g:loaded_matchparen=1
 
-" set tabstop=2
-" set shiftwidth=2
+set tabstop=2
+set shiftwidth=2
 
 
 autocmd Filetype python setlocal ts=4 sw=4 expandtab
@@ -19,7 +19,7 @@ let g:ale_linters = {
     \ }
 
 let g:ale_fixers = {
-    \ 'javascript': ['prettier_standard'],
+    \ 'javascript': ['prettier-standard'],
     \ 'python':['autopep8','black','isort'],
     \ }
 
